@@ -1,15 +1,8 @@
 <h1>Create a new Task</h1>
 
-<form action="/tasks" method="post">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <label for="title">Title</label>
-  <input type="text" name="task[title]">
+<%= render 'form', task: @task %>
 
-  <label for="details">Details</label>
-  <input type="text" name="task[details]">
-
-  <label for="completed">Completed</label>
-  <input type="boolean" name="task[completed]">
-
-  <input type="submit">
-</form>
+<hr>
+<%= link_to tasks_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>

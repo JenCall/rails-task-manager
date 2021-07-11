@@ -1,14 +1,8 @@
-<h1>Edit <%= @task.title %></h1>
+<h1>Edit task: <%= @task.title %></h1>
 
-<%= form_for @task do |f|  %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<%= render 'form', task: @task %>
 
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-
-  <%= f.label :completed %>
-  <%= f.check_box :completed %>
-
-  <%= f.submit %>
+<hr>
+<%= link_to tasks_path do %>
+  <i class="fa fa-history"></i> Back to all tasks
 <% end %>
